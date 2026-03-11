@@ -1,5 +1,5 @@
 # MeshCore_ESPTool_Flasher
-Script to Flash MeshCore to LoRa Device
+Script to Flash and Verify MeshCore to LoRa Device
 <br>
 <br>
 ## Usage
