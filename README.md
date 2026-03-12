@@ -1,5 +1,7 @@
 # MeshCore_ESPTool_Flasher
 Script to Flash and Verify MeshCore to LoRa Device
+- Only tested with Heltec v4 as that is all I have access to currently.
+- I dont't have a micro$lop OS to test this setup on. Someone let me know if it works?
 <br>
 <br>
 ## Usage
