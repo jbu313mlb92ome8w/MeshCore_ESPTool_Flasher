@@ -4,6 +4,7 @@ Script to Flash and Verify MeshCore to LoRa Device
 - I dont't have a micro$lop OS to test this setup on. Someone let me know if it works?
 <br>
 <br>
+
 ## Usage
 - Place mesh_flasher.sh and, preferably, all needed firmware files in the same directory. 
 - Make mesh_flasher.sh executable with `sudo chmod +x mesh_flasher.sh`
