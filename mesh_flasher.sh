@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-version=1
+version=1.1
 
 # abort on error, undefined var, or failed pipe
 set -euo pipefail
@@ -148,9 +148,12 @@ max_role_len=${#header_role}
 max_name_len=${#header_name}
 
 for dev in "${DEVICES[@]}"; do
-    mac=$(udevadm info --name="$dev" \
-        | grep ID_SERIAL_SHORT= \
-        | cut -d= -f2)
+    raw_serial=$(udevadm info --name="$dev" | grep ID_SERIAL_SHORT= | cut -d= -f2)
+    if [[ "$raw_serial" != *:* ]]; then
+        mac=$(echo "$raw_serial" | sed -E 's/(..)/\1:/g; s/:$//')
+    else
+        mac="$raw_serial"
+    fi
     [[ -z "$mac" ]] && mac="N/A"
     mac_lc=$(echo "$mac" | tr '[:upper:]' '[:lower:]')
     role=${MAC_ROLE_MAP["$mac_lc"]:-N/A}
